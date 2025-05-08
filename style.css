@@ -1,0 +1,246 @@
+/* General Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --transition: all 0.3s ease;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 76px; /* For fixed navbar */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+  
+  .section-title {
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Navbar */
+  .navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: var(--transition);
+  }
+  
+  .nav-link:hover {
+    color: var(--primary-color) !important;
+  }
+  
+  /* Cards */
+  .card {
+    transition: var(--transition);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  /* Testimonial Cards */
+  .testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .testimonial-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: right;
+    margin-top: 15px;
+  }
+  
+  /* About Section */
+  .about-img-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .about-img-container::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  
+  /* Contact Form */
+  #contactForm .form-control {
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    transition: var(--transition);
+  }
+  
+  #contactForm .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--dark-color);
+  }
+  
+  footer h5 {
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  footer a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    margin-right: 10px;
+    transition: var(--transition);
+  }
+  
+  .social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+      font-size: 1.2rem;
+    }
+    
+    .section-title {
+      text-align: center;
+    }
+    
+    .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .about-img-container::before {
+      display: none;
+    }
+  }
+  
+  /* Custom styles to complement Tailwind CSS */
+  .hero-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .video-thumbnail {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .video-thumbnail:hover {
+    transform: scale(1.03);
+  }
+  
+  .play-btn {
+    transition: all 0.3s ease;
+    opacity: 0.9;
+  }
+  
+  .video-thumbnail:hover .play-btn {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  /* Additional styles for header contrast */
+  .hero-title {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Additional responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-image {
+      background-position: center 30%;
+    }
+  }
