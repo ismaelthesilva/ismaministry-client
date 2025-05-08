@@ -3,11 +3,13 @@
     "version": 2,
     "builds": [
       {
-        "src": "client/**",
+        "src": "**",
         "use": "@vercel/static"
       }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/client/$1" }
+      { "handle": "filesystem" },
+      { "src": "/", "dest": "/index.html" },
+      { "src": "/(.*)", "dest": "/$1" }
     ]
   }
